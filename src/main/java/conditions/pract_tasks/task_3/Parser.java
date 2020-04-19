@@ -1,4 +1,4 @@
-package conditions.pract_tasks.task_2;
+package conditions.pract_tasks.task_3;
 
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
