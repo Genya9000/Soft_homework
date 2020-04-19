@@ -1,31 +1,34 @@
 package conditions.pract_tasks;
 
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Task_1 {
-    public static void main(String[] args)
-    {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Input number: ");
-        int day = in.nextInt();
-
-        System.out.println(getDayName(day));
-    }
-
-    // Get the name for the Week
-    public static String getDayName(int day) {
-        String dayName = "";
-        switch (day) {
-            case 1: dayName = "Monday, Понедельник, Понеділок"; break;
-            case 2: dayName = "Tuesday, Вторник, Вівторок"; break;
-            case 3: dayName = "Wednesday, Среда, Середа"; break;
-            case 4: dayName = "Thursday, Чегверг, Четвер"; break;
-            case 5: dayName = "Friday, Пятница, П'ятниця"; break;
-            case 6: dayName = "Saturday, Суббота, Субота"; break;
-            case 7: dayName = "Sunday, Воскресенье, Неділя"; break;
-            default:dayName = "Invalid day range";
+    BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+    int count = 0;
+    int number = 0;
+    public void enterThreeValue(){
+        for (int i = 0; i < 3; i++) {
+            System.out.println("Enter number:");
+            try {
+                 number = Integer.parseInt(reader.readLine());
+            } catch (NumberFormatException ex) {
+                System.out.println("Not a number !");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            if (number%2 != 0) {
+                count++;
+            }
         }
-
-        return dayName;
     }
+
+    public static void main(String[] args) {
+Task_1 task_0 = new Task_1();
+task_0.enterThreeValue();
+        System.out.println("You entered " + task_0.count + " odd numbers");
+    }
+
+
 }

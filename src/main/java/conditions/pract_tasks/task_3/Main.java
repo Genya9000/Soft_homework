@@ -1,4 +1,4 @@
-package conditions.pract_tasks.task_2;
+package conditions.pract_tasks.task_3;
 
 public class Main {
     public static void main(String[] args) {
